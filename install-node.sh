@@ -10,6 +10,7 @@ cd go-quai
 read -p "Release (check here https://github.com/dominant-strategies/go-quai/tags) ? " release
 git checkout $release
 cp network.env.dist network.env
+make go-quai
 nano network.env
 
 if [ -f ~/scripts/quai/config/env] 
