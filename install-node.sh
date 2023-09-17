@@ -2,12 +2,14 @@
 
 # https://docs.quai.network/node/node-overview/run-a-node
 
+apt-get update
+sudo apt install snapd
 sudo snap install go --classic
 sudo apt install git make
 cd ~
 git clone https://github.com/dominant-strategies/go-quai
 cd go-quai
-read -p "Release (check here https://github.com/dominant-strategies/go-quai/tags) ? " release
+read -p "Release (check here https://github.com/dominant-strategies/go-quai/tags ) ? " release
 git checkout $release
 cp network.env.dist network.env
 make go-quai
