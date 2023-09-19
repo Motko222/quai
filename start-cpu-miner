@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source ~/scripts/quai/config/env
+make run-mine-background region=$region zone=$zone
