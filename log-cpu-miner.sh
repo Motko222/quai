@@ -1,4 +1,4 @@
-n#!/bin/bash
+#!/bin/bash
 
 source ~/scripts/quai/config/env
 cd ~/quai-cpu-miner
