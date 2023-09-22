@@ -1,5 +1,5 @@
-#!/bin/bash
+n#!/bin/bash
 
 source ~/scripts/quai/config/env
 cd ~/quai-cpu-miner
-tail -n 100 logs/slice-$zone-$region.log
+tail -n 100 logs/slice-$region-$zone.log
