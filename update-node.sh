@@ -7,8 +7,10 @@ case $yn1 in
     echo "Stopping..."
     make stop
     echo "Updating..."
-    git pull
     git fetch --all
+    echo "Get latest release: https://github.com/dominant-strategies/go-quai/tags"
+    read -p "Tag? " tag
+    git checkout $tag     
     read -p "Clear state? " yn2
     case $yn2 in
       y|N)
