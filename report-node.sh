@@ -2,7 +2,7 @@
 
 source ~/scripts/quai/config/env
 
-cd $path
+cd ~/go-quai
 version=$(cat ./VERSION)
 
 localBlockHeight=$(curl -s --location -g 'http://127.0.0.1:8512' --header 'Content-Type: application/json' --data '{ "jsonrpc": "2.0", "method": "quai_blockNumber", "params": [], "id": 1 }' | jq .result)
@@ -12,7 +12,7 @@ remoteBlockHeightNum=${remoteBlockHeight:3:-1}
 ((localBlockHeightNum=16#$localBlockHeightNum));
 ((remoteBlockHeightNum=16#$remoteBlockHeightNum));
 diffBlockHeight=$(expr $remoteBlockHeightNum - $localBlockHeightNum)
-folderSize=$(du -hs $path | awk '{print $1}')
+folderSize=$(du -hs ~/go-quai | awk '{print $1}')
 
 if [ $diffBlockHeight -gt 10 ]
   then
