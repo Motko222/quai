@@ -1,7 +1,7 @@
 #!/bin/bash
 
 read -p "Sure? " yn1
-case yn1 in
+case $yn1 in
   y|Y)
     cd ~/go-quai
     echo "Stopping..."
@@ -10,7 +10,7 @@ case yn1 in
     git pull
     git fetch --all
     read -p "Clear state? " yn2
-    case yn2 in
+    case $yn2 in
       y|N)
         echo "Clearing state..."
         rm -rf nodelogs 
@@ -27,7 +27,3 @@ case yn1 in
   echo "Cancelled..."
   ;;
 esac
-
-
-
-make go-quai
