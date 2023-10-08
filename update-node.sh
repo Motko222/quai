@@ -20,7 +20,7 @@ case $yn1 in
         echo "Not clearing state..."
       ;;
     esac
-    Echo "Building..."
+    echo "Building..."
     make go-quai
   ;;
   *)
