@@ -17,11 +17,18 @@ folderSize=$(du -hs ~/go-quai | awk '{print $1}')
 if [ $diffBlockHeight -gt 10 ]
   then
     isSynced=false
-    status=error
+    status=warning
     note="'syncing $localBlockHeightNum/$remoteBlockHeightNum'"
   else
     isSynced=true
     status=ok
+fi
+
+if [ -z $localBlockHeight ]
+  then
+    isSynced=false
+    status=error
+    note="'cannot fetch local height'"
 fi
 
 echo "updated='$(date +'%y-%m-%d %H:%M')'"
